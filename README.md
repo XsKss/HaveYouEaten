@@ -27,6 +27,8 @@ npm run build
 
 ## 效果演示
 
+<img src="https://gitee.com/xskss/image/raw/master/%E5%90%83%E4%BA%86%E5%90%97%E4%BA%8C%E7%BB%B4%E7%A0%81.png" alt="吃了吗二维码" style="zoom:50%;" />
+
 ## 项目结构
 
 ```
