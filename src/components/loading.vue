@@ -1,6 +1,9 @@
 <template>
   <div class="loading_container">
-    <div class="load_img" :style="{ backgroundPositionY: -(positionY % 7) * 2.5 + 'rem' }"></div>
+    <div
+      class="load_img"
+      :style="{ backgroundPositionY: -(positionY % 7) * 1 + 'rem' }"
+    ></div>
     <svg class="load_ellipse" xmlns="http://www.w3.org/2000/svg" version="1.1">
       <ellipse cx="26" cy="10" rx="26" ry="10" style="fill:#ddd;stroke:none;" />
     </svg>
@@ -12,7 +15,7 @@ export default {
   data() {
     return {
       positionY: 0,
-      timer: null
+      timer: null,
     };
   },
   mounted() {
@@ -22,12 +25,12 @@ export default {
   },
   beforeDestroy() {
     clearInterval(this.timer);
-  }
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "src/style/mixin";
+@import "src/assets/css/mixin";
 @keyframes load {
   0% {
     transform: translateY(0px);
@@ -59,10 +62,10 @@ export default {
 }
 .load_img {
   @include wh(100%, 100%);
-  background: url(../assets/images/icon_loading.png) no-repeat 0 0;
+  background: url(../assets/img/icon_loading.png) no-repeat 0 0;
   background-size: 1rem auto;
   transform: translateY(0px);
-  animation: load 0.6s infinite ease-in-out;
+  animation: load 0.6s infinite ease-in-out; //加载图片跳动频率
   position: relative;
   z-index: 11;
 }

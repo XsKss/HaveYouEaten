@@ -24,7 +24,12 @@
 
     <!-- 轮播 -->
 
-    <swipe class="my-swipe" :loop="false" indicator-color="grey" show-indicators="true">
+    <swipe
+      class="my-swipe"
+      :loop="false"
+      indicator-color="grey"
+      show-indicators="true"
+    >
       <swipe-item>
         <grid>
           <grid-item v-for="(item, index) in swiperList1" :key="index">
@@ -71,7 +76,7 @@ export default {
       titlePosition: "",
       swiperList1: [],
       swiperList2: [],
-      shopListArr: []
+      shopListArr: [],
     };
   },
   components: {
@@ -83,7 +88,7 @@ export default {
     GridItem,
     VanImage: Image,
     ShowList,
-    MenuBar
+    MenuBar,
   },
   method: {
     onClickLeft() {
@@ -91,20 +96,20 @@ export default {
     },
     onClickRight() {
       Toast("按钮");
-    }
+    },
   },
   async mounted() {
-    getPosiDate().then(res => {
+    getPosiDate().then((res) => {
       this.titlePosition = res.name;
     });
-    getIndexEntryDate().then(res => {
+    getIndexEntryDate().then((res) => {
       this.swiperList1 = res.slice(0, 8);
       this.swiperList2 = res.slice(8, 16);
     });
-    getRestaurantsDate().then(res => {
+    getRestaurantsDate().then((res) => {
       this.shopListArr = res;
     });
-  }
+  },
 };
 </script>
 

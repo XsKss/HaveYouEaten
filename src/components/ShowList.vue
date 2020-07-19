@@ -70,7 +70,7 @@
 
     <ul v-else class="animation_opactiy">
       <li class="list_back_li" v-for="item in 10" :key="item">
-        <img src="../assets/images/shopback.svg" class="list_back_svg" />
+        <img src="../assets/img/shopback.svg" class="list_back_svg" />
       </li>
     </ul>
     <p v-if="touchend" class="empty_data">没有更多了</p>
@@ -93,7 +93,7 @@ export default {
       preventRepeatReuqest: false, //到达底部加载数据，防止重复加载
       showBackStatus: false, //显示返回顶部按钮
       showLoading: true, //显示加载动画
-      touchend: false //没有更多数据
+      touchend: true //没有更多数据
     };
   },
   props: ["shopListArr"],
@@ -125,7 +125,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "src/style/mixin";
+@import "src/assets/css/mixin";
 .shoplist_container {
   background-color: #fff;
   margin-bottom: 0.4rem;
